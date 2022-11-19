@@ -88,6 +88,6 @@ namespace Space_Invaders2._0
 
             MessageBox.Show(message); // mensaje 
         }
-    }s
+    }
 }
 
