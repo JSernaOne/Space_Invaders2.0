@@ -1,10 +1,14 @@
+using System.Media;
+
 namespace Space_Invaders2._0
 {
-    public partial class Form : System.Windows.Forms.Form // Ventana de inicio
+    public partial class Form1 : Form // Ventana de inicio
     {
-        public Form()
+        public Form1()
         {
             InitializeComponent();
+            Media();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -15,7 +19,8 @@ namespace Space_Invaders2._0
 
         public void Media()
         {
-
+            //SoundPlayer sp = new SoundPlayer(Properties.Resources.space_invaders);
+            //sp.PlayLooping();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -26,6 +31,16 @@ namespace Space_Invaders2._0
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Inicio(object sender, KeyEventArgs e)
+        {
+            Space_Invaders spaceInvaders = new Space_Invaders(); // Instancio el form2
+            if (e.KeyCode == Keys.Enter) // Verfiico pulsación
+            {
+                spaceInvaders.Show(); // abro el form2
+                this.Hide(); // Oculto el form1
+            }
         }
     }
 }
