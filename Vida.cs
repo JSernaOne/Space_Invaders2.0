@@ -13,7 +13,7 @@ namespace Space_Invaders2._0
             vida.Size = new Size(200, 15);
             vida.Location = new Point(800, 21);
             vida.Minimum = 0;
-            vida.Maximum = 100;
+            vida.Maximum = 90;
             vida.Value = vida.Maximum;
 
             p.Controls.Add(vida);

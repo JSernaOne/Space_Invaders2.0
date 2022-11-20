@@ -44,7 +44,7 @@ namespace Space_Invaders2._0
             invaders1.Movement(this); // invaders
 
             // Balas de lso Aliens
-            timer -= 3; // conteo regresivo del timer
+            timer -= 10; // conteo regresivo del timer
             if (timer < 1) // condición´para ejecutar 
             {
                 timer = 200; // cada que el intervalo definido en el timer del form se ejecute lanzara un bala
@@ -96,7 +96,7 @@ namespace Space_Invaders2._0
                 //BALA INVADERS
                 if (x is PictureBox && (string)x.Tag == "BulletAliens") // bala Aliens
                 {
-                    x.Top += 5; // muevo bala invaders
+                    x.Top += 8; // muevo bala invaders
                     if (x.Top > 640) // delete bala cuando pasa las dimensiones de la ventana
                     {
                         this.Controls.Remove(x);
@@ -106,7 +106,7 @@ namespace Space_Invaders2._0
                                                                        // y si se cruza con los invaders
                     {
                         // qUITA VIDAS
-                        vidatak.vida.Value -= 20;
+                        vidatak.vida.Value -= 30;
                         this.Controls.Remove(x);
 
                         if (vidatak.vida.Value == 0)
