@@ -77,30 +77,6 @@ namespace Space_Invaders2._0
             }
         }
 
-
-        //public void Point(Control x)
-        //{
-
-        //    if (x is PictureBox && (string)x.Tag == "BulletTag")
-        //    {
-        //        Remove(x);
-        //    }
-
-        //}
-        //public void Remove(Control y)
-        //{
-
-        //    for (int i = 0; i <= invaders.GetUpperBound(0); i++)
-        //    {
-        //        if (y.Bounds.IntersectsWith(invaders[i].Bounds)) // obtengo todos los valores del tamaño de x
-        //                                                         // y si se cruza con los invaders
-        //        {
-        //            y.Controls.Remove(invaders[i]); //remover el invader cuando la bala lo toca
-        //        }
-        //    }
-        //}
-
-
     }
 
 

@@ -34,8 +34,6 @@ namespace Space_Invaders2._0
                 {
                     x.Top -= 6; // Movimiento
 
-                    //invaders1.Point(x);
-
                 }
             }
 

@@ -148,10 +148,10 @@ namespace Space_Invaders2._0
 
             if (e.KeyCode == Keys.Space) // Crea bala del tanque
             {
-                timer -= 40; // resta al timer
+                timer -= 20; // resta al timer
                 if (timer < 20) // condición
                 {
-                    timer = 300; //  tiempo en que se ejcutara (milisegundos)
+                    timer = 200; //  tiempo en que se ejcutara (milisegundos)
                     loadtank.Bullet(this, "BulletTank");
                 }
 
