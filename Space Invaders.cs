@@ -17,6 +17,7 @@ namespace Space_Invaders2._0
         Tank loadtank;
         Invaders1 invaders1;
         Main main;
+        Vida vidatak;
         public Space_Invaders()
         {
             InitializeComponent();
@@ -24,10 +25,11 @@ namespace Space_Invaders2._0
             invaders1 = new Invaders1();
             loadtank = new Tank();
             main = new Main();
+            vidatak = new Vida();
 
             loadtank.CreateTank(this); // creo el tanque en el form
             invaders1.Create(this); // creo los aliens en el form
-
+            vidatak.VidaTank(this);
         }
 
         private int timer = 200;
@@ -62,42 +64,63 @@ namespace Space_Invaders2._0
                         Timer_Main.Stop();
                         main.GameOver("Game Over **Te Han Invadido**", this); // Lanzo mensaje si se interceptan los PictureBox
                     }
-                }
 
-                // BALA TANQUE
-                if (x is PictureBox && (string)x.Tag == "BulletTank") // bala del tanque
-                {
-                    foreach (PictureBox i in invaders1.invaders) // recorro la lista de los aliens
+                    foreach(Control y in this.Controls) // asigno propiedades
                     {
+                        // BALA TANQUE
+                        if (y is PictureBox && (string)y.Tag == "BulletTank") // bala del tanque
                         {
-                            if (x.Bounds.IntersectsWith(i.Bounds)) // obtengo todos los valores del tamaño de x
-                                                                                       // y si se cruza con los invaders
+                            if (y.Top < 0) // delete bala cuando pasa las dimensiones de la ventana
                             {
-                                this.Controls.Remove(i); //remover el invader cuando la bala lo toca
+                                this.Controls.Remove(y);
+                            }
+
+
+                            if (y.Bounds.IntersectsWith(x.Bounds)) // válido que la bala intercepte al inavders
+                            {
+                            
+                                this.Controls.Remove(x); //remover el invader cuando la bala lo toca
+                                this.Controls.Remove(y); // Remuevo bala
 
                                 main.Score += 1; // falla 
                                 label2.Text = Convert.ToString(main.Score); // mostrar en el label 
                             }
 
-
                         }
                     }
-
                 }
+                   
+
+
+                
                 //BALA INVADERS
                 if (x is PictureBox && (string)x.Tag == "BulletAliens") // bala Aliens
                 {
                     x.Top += 5; // muevo bala invaders
+                    if (x.Top > 640) // delete bala cuando pasa las dimensiones de la ventana
+                    {
+                        this.Controls.Remove(x);
+                    }
+
                     if (x.Bounds.IntersectsWith(loadtank.tank.Bounds)) // obtengo todos los valores del tamaño de x
                                                                        // y si se cruza con los invaders
                     {
-                        this.Controls.Remove(loadtank.tank);
+                        // qUITA VIDAS
+                        vidatak.vida.Value -= 20;
                         this.Controls.Remove(x);
-                        Timer_Main.Stop();
-                        main.GameOver("Has caído", this);
+
+                        if (vidatak.vida.Value == 0)
+                        {
+                            this.Controls.Remove(loadtank.tank);
+                            Timer_Main.Stop();
+                            main.GameOver("Has caído", this);
+
+                        }
+                       
                     }
                 }
             }
+
 
 
         }

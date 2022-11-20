@@ -24,7 +24,7 @@ namespace Space_Invaders2._0
                     invaders[i].Image = Properties.Resources.inavders; // obtengo la imagen
                     invaders[i].Left = Left; // pocisión inicial
                     invaders[i].Top = 50; // margen superior
-                    invaders[i].Tag = "invaders";   // Innecesario - se puede utilizar para llamar a la lista como string
+                    invaders[i].Tag = "invaders";   
 
                     x.Controls.Add(base.invaders[i]); // agregando invaders a la lista
                     Left += 80; // avanzo de pocisión de los invaders

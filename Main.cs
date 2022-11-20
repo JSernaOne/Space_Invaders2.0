@@ -15,7 +15,7 @@ namespace Space_Invaders2._0
         public PictureBox[] invaders; // almacenar aliens
         public PictureBox bullet; // almacena las balas
         public Random random;
-
+        public ProgressBar vida;
 
         // Propiedades
         private int left = 0; // pocisión en x inicial 
@@ -29,11 +29,13 @@ namespace Space_Invaders2._0
             invaders = new PictureBox[33];
             bullet = new PictureBox();
             random = new Random();
+            vida = new ProgressBar();
 
             left = 50; // pocisión en x inicial 
             top = 50; // pocision en y inicial
             speed = 10; // velocidad de movimient
-            speedInvader = 5;
+            speedInvader = 3;
+
         }
 
         // Get y set
@@ -77,6 +79,7 @@ namespace Space_Invaders2._0
             bullet.BringToFront(); // traer al frente
 
         }
+
         public void GameOver(String message, Form p) //game over (termina la partida)
         {
             foreach (PictureBox i in invaders) // recorro cada elemento del picture
