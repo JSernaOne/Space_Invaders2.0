@@ -62,7 +62,9 @@ namespace Space_Invaders2._0
                                                                        // y si se cruza con los invaders
                     {
                         Timer_Main.Stop();
-                        main.GameOver("Game Over **Te Han Invadido**", this); // Lanzo mensaje si se interceptan los PictureBox
+                        Form2 form2 = new Form2();//INSTANCIO EL FORM DEL GAME OVER(cuando los aliens llegan al suelo)
+                        form2.ShowDialog();//MOSTRAR EL FORM DE GAME OVER
+
                     }
 
                     foreach(Control y in this.Controls) // asigno propiedades
@@ -105,15 +107,19 @@ namespace Space_Invaders2._0
                     if (x.Bounds.IntersectsWith(loadtank.tank.Bounds)) // obtengo todos los valores del tamaño de x
                                                                        // y si se cruza con los invaders
                     {
-                        // qUITA VIDAS
+                        // QUITA VIDAS
                         vidatak.vida.Value -= 30;
                         this.Controls.Remove(x);
 
                         if (vidatak.vida.Value == 0)
                         {
+                            Form2 form2 = new Form2();//INSTANCIAR EL FORM DEL GAME OVER(cuando la vida del tanque sea 0)
                             this.Controls.Remove(loadtank.tank);
                             Timer_Main.Stop();
-                            main.GameOver("Has caído", this);
+                            form2.ShowDialog();//MOSTRAR EL FORM DE GAME OVER
+                            
+                            
+                            
 
                         }
                        
