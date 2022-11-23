@@ -36,7 +36,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Space_Invaders2._0.Properties.Resources.space_invader;
+            this.pictureBox1.Image = global::Space_Invaders2._0.Properties.Resources.Gift_go;
             this.pictureBox1.Location = new System.Drawing.Point(241, 91);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(94, 76);
