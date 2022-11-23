@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace Space_Invaders2._0
 {
@@ -18,6 +19,7 @@ namespace Space_Invaders2._0
         Invaders1 invaders1;
         Main main;
         Vida vidatak;
+
         public Space_Invaders()
         {
             InitializeComponent();
@@ -40,11 +42,12 @@ namespace Space_Invaders2._0
 
         private void Timer_Main_Tick(object sender, EventArgs e)
         {
+
             loadtank.MovementBullet(this); // bala
             invaders1.Movement(this); // invaders
 
             // Balas de lso Aliens
-            timer -= 10; // conteo regresivo del timer
+            timer -= 7; // conteo regresivo del timer
             if (timer < 1) // condición´para ejecutar 
             {
                 timer = 200; // cada que el intervalo definido en el timer del form se ejecute lanzara un bala
@@ -61,11 +64,14 @@ namespace Space_Invaders2._0
                     if (x.Bounds.IntersectsWith(loadtank.tank.Bounds)) // obtengo todos los valores del tamaño de x
                                                                        // y si se cruza con los invaders
                     {
+                        Form2 form2 = new Form2();//INSTANCIO EL FORM DEL GAME OVER(cuando los aliens llegan al suelo)
+
                         Timer_Main.Stop();
-                        main.GameOver("Game Over **Te Han Invadido**", this); // Lanzo mensaje si se interceptan los PictureBox
+                        form2.Show();//MOSTRAR EL FORM DE GAME OVER
+                        this.Hide();
                     }
 
-                    foreach(Control y in this.Controls) // asigno propiedades
+                    foreach (Control y in this.Controls) // asigno propiedades
                     {
                         // BALA TANQUE
                         if (y is PictureBox && (string)y.Tag == "BulletTank") // bala del tanque
@@ -78,7 +84,7 @@ namespace Space_Invaders2._0
 
                             if (y.Bounds.IntersectsWith(x.Bounds)) // válido que la bala intercepte al inavders
                             {
-                            
+
                                 this.Controls.Remove(x); //remover el invader cuando la bala lo toca
                                 this.Controls.Remove(y); // Remuevo bala
 
@@ -89,14 +95,15 @@ namespace Space_Invaders2._0
                         }
                     }
                 }
-                   
 
 
-                
+
+
                 //BALA INVADERS
                 if (x is PictureBox && (string)x.Tag == "BulletAliens") // bala Aliens
                 {
-                    x.Top += 8; // muevo bala invaders
+                    x.Top += 7; // muevo bala invaders
+
                     if (x.Top > 640) // delete bala cuando pasa las dimensiones de la ventana
                     {
                         this.Controls.Remove(x);
@@ -105,18 +112,22 @@ namespace Space_Invaders2._0
                     if (x.Bounds.IntersectsWith(loadtank.tank.Bounds)) // obtengo todos los valores del tamaño de x
                                                                        // y si se cruza con los invaders
                     {
-                        // qUITA VIDAS
+
+                        // QUITA VIDAS
                         vidatak.vida.Value -= 30;
                         this.Controls.Remove(x);
 
                         if (vidatak.vida.Value == 0)
                         {
+                            Form2 form2 = new Form2();//INSTANCIO EL FORM DEL GAME OVER(cuando los aliens llegan al suelo)
+
                             this.Controls.Remove(loadtank.tank);
                             Timer_Main.Stop();
-                            main.GameOver("Has caído", this);
+                            form2.Show();//MOSTRAR EL FORM DE GAME OVER
+                            this.Hide();
 
                         }
-                       
+
                     }
                 }
             }
