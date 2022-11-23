@@ -42,5 +42,10 @@ namespace Space_Invaders2._0
                 this.Hide(); // Oculto el form1
             }
         }
+
+        private void Exit(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -10,40 +10,36 @@ using System.Windows.Forms;
 
 namespace Space_Invaders2._0
 {
-    public partial class Form2 : Form
+    public partial class Form2 : Form // Game Over
     {
         public Form2()
         {
             InitializeComponent();
         }
-        private void Form2_load(object sender, EventArgs e)
+        private void Form2_Load_1(object sender, EventArgs e)
         {
-            pictureBox1.Location=new Point(330, 82);
-            button1.Location = new Point(154, 263);
-            
-
+            pictureBox1.Location=new Point(253, 90);
+            volver_intentarlo.Location = new Point(120, 200);
+            Volver.Location = new Point(300, 200);
         }
-        private void Form2_load(object sender, KeyEventArgs e)//INSTANCIAR EL FORM DE GAME OVER
+        
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Form2 gameover = new Form2();
-            gameover.ShowDialog();
-            this.Hide();
-        }
-        private void intentarlo()//BOTON DE PARA VOLVER A JUGAR (un nuevo intento)
-        {
-            Space_Invaders space_Invaders=new Space_Invaders();
-            space_Invaders.Show();
-            this.Hide();
 
         }
 
-        private void salir()//  BOTON DE SALIR AL MENU EN EL GAME OVER
+        private void Volver_Click_1(object sender, EventArgs e)
         {
-            menu menu=new menu();//INSTANCIAEL FORM DE EL MENU
+            menu menu = new menu();//INSTANCIAEL FORM DE EL MENU
             menu.Show();
-            this.Hide();
-            
+            this.Close();
+        }
 
+        private void volver_intentarlo_Click_1(object sender, EventArgs e)
+        {
+            Space_Invaders space_Invaders = new Space_Invaders();
+            space_Invaders.Show();
+            this.Close();
         }
     }
 }

@@ -64,7 +64,7 @@ namespace Space_Invaders2._0
                         Timer_Main.Stop();
                         Form2 form2 = new Form2();//INSTANCIO EL FORM DEL GAME OVER(cuando los aliens llegan al suelo)
                         form2.ShowDialog();//MOSTRAR EL FORM DE GAME OVER
-
+                        this.Hide();
                     }
 
                     foreach(Control y in this.Controls) // asigno propiedades
@@ -117,9 +117,7 @@ namespace Space_Invaders2._0
                             this.Controls.Remove(loadtank.tank);
                             Timer_Main.Stop();
                             form2.ShowDialog();//MOSTRAR EL FORM DE GAME OVER
-                            
-                            
-                            
+                            this.Hide();   
 
                         }
                        

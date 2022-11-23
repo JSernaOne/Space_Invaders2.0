@@ -65,11 +65,11 @@ namespace Space_Invaders2._0
                 int x = invaders[i].Location.X; // lolización del alien en el eje x
                 int y = invaders[i].Location.Y; // lolización del alien en el eje y
 
-                int white = f.Width; // tamaño(ancho) del form
+                int width = f.Width; // tamaño(ancho) del form
 
                 invaders[i].Left += SpeedInvaders; // Movimiento de los invaders
 
-                if (x > white) //  verificar la condición si el cuadro de imagen toca
+                if (x > width) //  verificar la condición si el cuadro de imagen toca
                                //  el límite del ancho del formulario   
                 {
                     invaders[i].Location = new Point(x - 1100, y + 65); // redibujo los invaders
