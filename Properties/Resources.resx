@@ -121,11 +121,8 @@
   <data name="invaders3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\sprites\invaders3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Gift_go" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\sprites\gift_go.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bulletAlien" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\sprites\bulletalien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="space_invaders" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\media\space_invaders.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="alien_pixelated_shape_of_a_digital_game" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\sprites\alien-pixelated-shape-of-a-digital-game.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,16 +130,19 @@
   <data name="tank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\sprites\tank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="inavders" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\sprites\inavders.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="inavaders2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\sprites\inavaders2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="space_invaders" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\media\space_invaders.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="Gift_go" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\sprites\gift_go.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bulletAlien" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\sprites\bulletalien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bullet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Sprites\bullet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="inavders" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\sprites\inavders.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

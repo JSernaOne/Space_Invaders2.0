@@ -2,9 +2,9 @@ using System.Media;
 
 namespace Space_Invaders2._0
 {
-    public partial class menu : Form // Ventana de inicio
+    public partial class Form1 : Form // Ventana de inicio
     {
-        public menu()
+        public Form1()
         {
             InitializeComponent();
             Media();
@@ -41,11 +41,6 @@ namespace Space_Invaders2._0
                 spaceInvaders.Show(); // abro el form2
                 this.Hide(); // Oculto el form1
             }
-        }
-
-        private void Exit(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
