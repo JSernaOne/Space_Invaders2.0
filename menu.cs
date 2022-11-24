@@ -13,8 +13,7 @@ namespace Space_Invaders2._0
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            label1.Location = new Point(286, 134);
-            label2.Location = new Point(343, 291);
+
         }
 
         public void Media()
