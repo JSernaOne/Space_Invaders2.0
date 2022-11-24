@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Space_Invaders2._0
 {
-    public partial class Space_Invaders : Form
+    public partial class Space_Invaders : Form // form 2, jugable
     {
         // instancias de las clases
         Tank loadtank;
@@ -108,8 +108,8 @@ namespace Space_Invaders2._0
                                                                        // y si se cruza con los invaders
                     {
                         // QUITA VIDAS
-                        vidatak.vida.Value -= 30;
-                        this.Controls.Remove(x);
+                        vidatak.vida.Value -= 30; // RECUDCIR LA VIDA EN 30
+                        this.Controls.Remove(x); // remover la bala cuando intercepta al tank
 
                         if (vidatak.vida.Value == 0)
                         {
@@ -168,7 +168,7 @@ namespace Space_Invaders2._0
             Application.Exit(); // cerrar desde el boton de ventana
         }
 
-        private void label2_Click(object sender, EventArgs e) // Puntuación
+        private void Label2_Click(object sender, EventArgs e) // Puntuación
         {
 
         }
