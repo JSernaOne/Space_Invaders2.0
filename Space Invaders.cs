@@ -85,9 +85,13 @@ namespace Space_Invaders2._0
                                 this.Controls.Remove(x); //remover el invader cuando la bala lo toca
                                 this.Controls.Remove(y); // Remuevo bala
 
-                                Score(1); // suamr al score
+                                if(main.Score <= 33)
+                                {
+                                    Score(1); // suamr al score
 
-                                if (main.Score == 33)
+                                }
+
+                                if (main.Score >= 33)
                                 {
                                     Winner winner = new Winner(main.Score);
 
@@ -174,14 +178,14 @@ namespace Space_Invaders2._0
         private void Disparo(object sender, MouseEventArgs e) // generador y disparodr de la bala del tanque
         {
 
-            timer -= 110; // resta al timer
-            if (timer < 1) // condición
-            {
-                timer = 200; //  tiempo en que se ejcutara (milisegundos)
+            //timer -= 110; // resta al timer
+            //if (timer < 1) // condición
+            //{
+            //    timer = 200; //  tiempo en que se ejcutara (milisegundos)
 
-                loadtank.Bullet(this, "BulletTank");
+               loadtank.Bullet(this, "BulletTank");
 
-            }
+            //}
 
 
 
