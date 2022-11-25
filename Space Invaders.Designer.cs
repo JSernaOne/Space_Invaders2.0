@@ -109,6 +109,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Space_Invaders_FormClosing);
             this.Load += new System.EventHandler(this.Space_Invaders_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MovimientoTank);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Disparo);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

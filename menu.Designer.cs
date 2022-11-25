@@ -40,6 +40,8 @@
             this.NivelTres = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -83,7 +85,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Space_Invaders2._0.Properties.Resources.Gift_go;
-            this.pictureBox3.Location = new System.Drawing.Point(102, 71);
+            this.pictureBox3.Location = new System.Drawing.Point(152, 131);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(129, 106);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -113,7 +115,6 @@
             // NivelUno
             // 
             this.NivelUno.BackColor = System.Drawing.Color.DimGray;
-            this.NivelUno.Enabled = false;
             this.NivelUno.Font = new System.Drawing.Font("Showcard Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NivelUno.ForeColor = System.Drawing.Color.Cyan;
             this.NivelUno.Location = new System.Drawing.Point(675, 169);
@@ -122,6 +123,7 @@
             this.NivelUno.TabIndex = 7;
             this.NivelUno.Text = "Nivel 1";
             this.NivelUno.UseVisualStyleBackColor = false;
+            this.NivelUno.Click += new System.EventHandler(this.NivelUno_Click);
             // 
             // NivelDos
             // 
@@ -135,11 +137,11 @@
             this.NivelDos.TabIndex = 8;
             this.NivelDos.Text = "Nivel 2";
             this.NivelDos.UseVisualStyleBackColor = false;
+            this.NivelDos.Click += new System.EventHandler(this.NivelDos_Click);
             // 
             // NivelTres
             // 
             this.NivelTres.BackColor = System.Drawing.Color.DimGray;
-            this.NivelTres.Enabled = false;
             this.NivelTres.Font = new System.Drawing.Font("Showcard Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NivelTres.ForeColor = System.Drawing.Color.Cyan;
             this.NivelTres.Location = new System.Drawing.Point(675, 292);
@@ -148,6 +150,7 @@
             this.NivelTres.TabIndex = 9;
             this.NivelTres.Text = "Nivel 3";
             this.NivelTres.UseVisualStyleBackColor = false;
+            this.NivelTres.Click += new System.EventHandler(this.NivelTres_Click);
             // 
             // label2
             // 
@@ -171,6 +174,32 @@
             this.pictureBox6.TabIndex = 10;
             this.pictureBox6.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(37, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 38);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Score:\r\n";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(135, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 38);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "0";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -179,6 +208,8 @@
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(982, 593);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.NivelTres);
             this.Controls.Add(this.NivelDos);
@@ -221,5 +252,7 @@
         private Button NivelTres;
         private Label label2;
         private PictureBox pictureBox6;
+        public Label label3;
+        public Label label4;
     }
 }

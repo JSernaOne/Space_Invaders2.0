@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
+using System.Formats.Asn1;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Space_Invaders2._0
 {
@@ -18,6 +20,7 @@ namespace Space_Invaders2._0
         Invaders1 invaders1;
         Main main;
         Vida vidatak;
+
         public Space_Invaders()
         {
             InitializeComponent();
@@ -31,6 +34,7 @@ namespace Space_Invaders2._0
             invaders1.Create(this); // creo los aliens en el form
             vidatak.VidaTank(this);
         }
+
 
         private int timer = 200;
         private void Space_Invaders_Load(object sender, EventArgs e)
@@ -62,12 +66,14 @@ namespace Space_Invaders2._0
                                                                        // y si se cruza con los invaders
                     {
                         Timer_Main.Stop();
-                        Form2 form2 = new Form2();//INSTANCIO EL FORM DEL GAME OVER(cuando los aliens llegan al suelo)
+                        Form2 form2 = new Form2(main.Score);//INSTANCIO EL FORM DEL GAME OVER(cuando los aliens llegan al suelo)
+
                         form2.ShowDialog();//MOSTRAR EL FORM DE GAME OVER
-                        this.Hide();
+                        this.Visible = false;
+
                     }
 
-                    foreach(Control y in this.Controls) // asigno propiedades
+                    foreach (Control y in this.Controls) // asigno propiedades
                     {
                         // BALA TANQUE
                         if (y is PictureBox && (string)y.Tag == "BulletTank") // bala del tanque
@@ -80,21 +86,20 @@ namespace Space_Invaders2._0
 
                             if (y.Bounds.IntersectsWith(x.Bounds)) // válido que la bala intercepte al inavders
                             {
-                            
+
                                 this.Controls.Remove(x); //remover el invader cuando la bala lo toca
                                 this.Controls.Remove(y); // Remuevo bala
 
-                                main.Score += 1; // falla 
-                                label2.Text = Convert.ToString(main.Score); // mostrar en el label 
+                                Score();
                             }
 
                         }
                     }
                 }
-                   
 
 
-                
+
+
                 //BALA INVADERS
                 if (x is PictureBox && (string)x.Tag == "BulletAliens") // bala Aliens
                 {
@@ -113,14 +118,15 @@ namespace Space_Invaders2._0
 
                         if (vidatak.vida.Value == 0)
                         {
-                            Form2 form2 = new Form2();//INSTANCIAR EL FORM DEL GAME OVER(cuando la vida del tanque sea 0)
+                            Form2 form2 = new Form2(main.Score);//INSTANCIAR EL FORM DEL GAME OVER(cuando la vida del tanque sea 0)
+
                             this.Controls.Remove(loadtank.tank);
                             Timer_Main.Stop();
                             form2.ShowDialog();//MOSTRAR EL FORM DE GAME OVER
-                            this.Hide();   
+                            this.Visible = false;
 
                         }
-                       
+
                     }
                 }
             }
@@ -128,6 +134,14 @@ namespace Space_Invaders2._0
 
 
         }
+
+        private void Score()
+        {
+            main.Score += 1;
+            label2.Text = Convert.ToString(main.Score); // mostrar en el label 
+
+        }
+
         private void MovimientoTank(object sender, KeyEventArgs e) // Teclas tanque
         {
             int x = loadtank.tank.Location.X; // Guardo la localización
@@ -150,19 +164,25 @@ namespace Space_Invaders2._0
             if (e.KeyCode == Keys.A) loadtank.tank.Left -= loadtank.Speed; // muevo a la izquierda
             if (e.KeyCode == Keys.D) loadtank.tank.Left += loadtank.Speed; // muevo a la dereccha
 
-            if (e.KeyCode == Keys.Space) // Crea bala del tanque
-            {
-                timer -= 20; // resta al timer
-                if (timer < 20) // condición
-                {
-                    timer = 200; //  tiempo en que se ejcutara (milisegundos)
-                    loadtank.Bullet(this, "BulletTank");
-                }
 
-            }
         }
 
+        private void Disparo(object sender, MouseEventArgs e) // generador y disparodr de la bala del tanque
+        {
 
+            timer -= 110; // resta al timer
+            if (timer < 1) // condición
+            {
+                timer = 200; //  tiempo en que se ejcutara (milisegundos)
+
+                loadtank.Bullet(this, "BulletTank");
+
+            }
+
+
+
+
+        }
         private void Space_Invaders_FormClosing(object sender, FormClosingEventArgs e) // Finalizar ejecución
         {
             Application.Exit(); // cerrar desde el boton de ventana
@@ -172,5 +192,7 @@ namespace Space_Invaders2._0
         {
 
         }
+
+
     }
 }

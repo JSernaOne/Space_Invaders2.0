@@ -80,17 +80,6 @@ namespace Space_Invaders2._0
 
         }
 
-        public void GameOver(String message, Form p) //game over (termina la partida)
-        {
-            foreach (PictureBox i in invaders) // recorro cada elemento del picture
-            {
-                p.Controls.Remove(i); // elimino los elementos
-
-            }
-
-
-            MessageBox.Show(message); // mensaje 
-        }
     }
 }
 

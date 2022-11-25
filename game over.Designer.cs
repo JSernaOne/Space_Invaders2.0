@@ -35,24 +35,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // PictureBox1
             // 
             this.PictureBox1.Image = global::Space_Invaders2._0.Properties.Resources.Gift_go;
             this.PictureBox1.Location = new System.Drawing.Point(253, 71);
-            this.PictureBox1.Name = "pictureBox1";
+            this.PictureBox1.Name = "PictureBox1";
             this.PictureBox1.Size = new System.Drawing.Size(94, 76);
             this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBox1.TabIndex = 0;
             this.PictureBox1.TabStop = false;
+            this.PictureBox1.Click += new System.EventHandler(this.PictureBox1_Click_1);
             // 
-            // volver_intentarlo
+            // Volver_intentarlo
             // 
             this.Volver_intentarlo.BackColor = System.Drawing.Color.Black;
             this.Volver_intentarlo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Volver_intentarlo.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Volver_intentarlo.ForeColor = System.Drawing.Color.White;
             this.Volver_intentarlo.Location = new System.Drawing.Point(120, 233);
-            this.Volver_intentarlo.Name = "volver_intentarlo";
+            this.Volver_intentarlo.Name = "Volver_intentarlo";
             this.Volver_intentarlo.Size = new System.Drawing.Size(162, 58);
             this.Volver_intentarlo.TabIndex = 1;
             this.Volver_intentarlo.Text = "intentarlo de nuevo";
