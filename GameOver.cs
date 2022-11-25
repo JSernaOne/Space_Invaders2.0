@@ -10,16 +10,14 @@ using System.Windows.Forms;
 
 namespace Space_Invaders2._0
 {
-    public partial class Form2 : Form // Game Over
+    public partial class Form2 : Form // Winner
     {
-        public Form2(int score)
+        public Form2()
         {
             InitializeComponent();
 
-            puntaje = score;
         }
 
-        int puntaje;
         private void Form2_Load_1(object sender, EventArgs e)
         {
             PictureBox1.Location=new Point(253, 90);
@@ -36,7 +34,6 @@ namespace Space_Invaders2._0
         {
             menu menu = new menu();//INSTANCIAEL FORM DE EL MENU
             menu.Visible = true;
-            menu.DesbloqearLevel(puntaje);
             this.Visible = false;
         }
 
@@ -51,6 +48,12 @@ namespace Space_Invaders2._0
         private void PictureBox1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void Regresar(object sender, FormClosedEventArgs e) // Evente formClose
+        {
+            menu menu = new menu();//INSTANCIAEL FORM DE EL MENU
+            menu.Visible = true;
         }
     }
 }

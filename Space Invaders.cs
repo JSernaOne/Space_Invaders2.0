@@ -16,19 +16,14 @@ namespace Space_Invaders2._0
     public partial class Space_Invaders : Form // form 2, jugable
     {
         // instancias de las clases
-        Tank loadtank;
-        Invaders1 invaders1;
-        Main main;
-        Vida vidatak;
+        Tank loadtank =  new Tank();
+        Invaders1 invaders1 = new Invaders1();
+        Main main = new Main();
+        Vida vidatak = new Vida();
 
         public Space_Invaders()
         {
             InitializeComponent();
-
-            invaders1 = new Invaders1();
-            loadtank = new Tank();
-            main = new Main();
-            vidatak = new Vida();
 
             loadtank.CreateTank(this); // creo el tanque en el form
             invaders1.Create(this); // creo los aliens en el form
@@ -65,9 +60,9 @@ namespace Space_Invaders2._0
                     if (x.Bounds.IntersectsWith(loadtank.tank.Bounds)) // obtengo todos los valores del tamaño de x
                                                                        // y si se cruza con los invaders
                     {
-                        Timer_Main.Stop();
-                        Form2 form2 = new Form2(main.Score);//INSTANCIO EL FORM DEL GAME OVER(cuando los aliens llegan al suelo)
+                        Form2 form2 = new Form2();//INSTANCIO EL FORM DEL GAME OVER(cuando los aliens llegan al suelo)
 
+                        Timer_Main.Stop();
                         form2.ShowDialog();//MOSTRAR EL FORM DE GAME OVER
                         this.Visible = false;
 
@@ -90,15 +85,25 @@ namespace Space_Invaders2._0
                                 this.Controls.Remove(x); //remover el invader cuando la bala lo toca
                                 this.Controls.Remove(y); // Remuevo bala
 
-                                Score();
+                                Score(1); // suamr al score
+
+                                if (main.Score == 33)
+                                {
+                                    Winner winner = new Winner(main.Score);
+
+                                    Timer_Main.Stop();
+                                    winner.ShowDialog();
+                                    this.Visible = false;
+
+                                    Score(2);
+                                }
                             }
 
                         }
+
                     }
+                   
                 }
-
-
-
 
                 //BALA INVADERS
                 if (x is PictureBox && (string)x.Tag == "BulletAliens") // bala Aliens
@@ -118,7 +123,7 @@ namespace Space_Invaders2._0
 
                         if (vidatak.vida.Value == 0)
                         {
-                            Form2 form2 = new Form2(main.Score);//INSTANCIAR EL FORM DEL GAME OVER(cuando la vida del tanque sea 0)
+                            Form2 form2 = new Form2();//INSTANCIAR EL FORM DEL GAME OVER(cuando la vida del tanque sea 0)
 
                             this.Controls.Remove(loadtank.tank);
                             Timer_Main.Stop();
@@ -130,14 +135,13 @@ namespace Space_Invaders2._0
                     }
                 }
             }
-
-
+            
 
         }
 
-        private void Score()
+        private void Score(int contador) // Suma puntaje
         {
-            main.Score += 1;
+            main.Score += contador;
             label2.Text = Convert.ToString(main.Score); // mostrar en el label 
 
         }

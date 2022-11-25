@@ -142,6 +142,7 @@
             // NivelTres
             // 
             this.NivelTres.BackColor = System.Drawing.Color.DimGray;
+            this.NivelTres.Enabled = false;
             this.NivelTres.Font = new System.Drawing.Font("Showcard Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NivelTres.ForeColor = System.Drawing.Color.Cyan;
             this.NivelTres.Location = new System.Drawing.Point(675, 292);

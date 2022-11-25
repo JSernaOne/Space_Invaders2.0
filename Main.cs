@@ -12,7 +12,7 @@ namespace Space_Invaders2._0
     {
         // Instancias
         public PictureBox tank; // almacenar bala 
-        public PictureBox[] invaders; // almacenar aliens
+        public PictureBox[] invaders = new PictureBox[33]; // almacenar aliens
         public PictureBox bullet; // almacena las balas
         public Random random;
         public ProgressBar vida;
@@ -26,7 +26,6 @@ namespace Space_Invaders2._0
         public Main()
         {
             tank = new PictureBox();
-            invaders = new PictureBox[33];
             bullet = new PictureBox();
             random = new Random();
             vida = new ProgressBar();

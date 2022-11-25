@@ -56,7 +56,7 @@
             this.Volver_intentarlo.Name = "Volver_intentarlo";
             this.Volver_intentarlo.Size = new System.Drawing.Size(162, 58);
             this.Volver_intentarlo.TabIndex = 1;
-            this.Volver_intentarlo.Text = "intentarlo de nuevo";
+            this.Volver_intentarlo.Text = "Intentarlo de nuevo";
             this.Volver_intentarlo.UseVisualStyleBackColor = false;
             this.Volver_intentarlo.Click += new System.EventHandler(this.Volver_intentarlo_Click_1);
             // 
@@ -88,6 +88,7 @@
             this.MaximizeBox = false;
             this.Name = "Form2";
             this.Text = "Space Invaders";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Regresar);
             this.Load += new System.EventHandler(this.Form2_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.ResumeLayout(false);
