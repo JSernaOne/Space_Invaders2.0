@@ -22,8 +22,8 @@ namespace Space_Invaders2._0
         private int top = 0; // pocision en y inicial
         private int speed = 0; // velocidad de movimiento
         private int speedInvader = 0; // intervalo de movimietno
-        private int score = 0;
-        public Main()
+        private static int score = 0;
+        public Main() // base para iniciar
         {
             tank = new PictureBox();
             bullet = new PictureBox();
@@ -33,8 +33,20 @@ namespace Space_Invaders2._0
             left = 50; // pocisión en x inicial 
             top = 50; // pocision en y inicial
             speed = 10; // velocidad de movimient
-            speedInvader = 3;
+        }
 
+        public Main(int speedInvader) // Constructor de niveles
+        {
+            tank = new PictureBox();
+            bullet = new PictureBox();
+            random = new Random();
+            vida = new ProgressBar();
+
+            left = 50; // pocisión en x inicial 
+            top = 50; // pocision en y inicial
+            speed = 10; // velocidad de movimient
+            
+            this.speedInvader = speedInvader; // velocidad del invader de avuerdo al  nivel
         }
 
         // Get y set
@@ -48,6 +60,7 @@ namespace Space_Invaders2._0
         public int SpeedInvaders { get => speedInvader; set => speedInvader = value; }
 
         public int Score { get=> score; set => score = value; }
+
         public void Bullet(Control c, String Tag) // Creación de balas del tanque
         {
 
@@ -63,7 +76,6 @@ namespace Space_Invaders2._0
             if ((string)bullet.Tag == "BulletTank")  // Id de la bala
             {
                 bullet.Image = Properties.Resources.bullet; // obtengo la imagen
-                bullet.Top -= 7; // movimiento
             }
 
             if ((string)bullet.Tag == "BulletAliens") // Id del Tanque

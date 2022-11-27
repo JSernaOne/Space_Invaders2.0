@@ -16,21 +16,21 @@ namespace Space_Invaders2._0
     public partial class Space_Invaders : Form // form 2, jugable
     {
         // instancias de las clases
-        Tank loadtank =  new Tank();
-        Invaders1 invaders1 = new Invaders1();
+        Tank loadtank = new Tank();
         Main main = new Main();
+        Invaders1 invaders1;
         Vida vidatak = new Vida();
 
-        public Space_Invaders()
+        public Space_Invaders(int speedInvaders) // inicio los niveles
         {
             InitializeComponent();
+
+            invaders1 = new Invaders1(speedInvaders); // mando dato a los invaders
 
             loadtank.CreateTank(this); // creo el tanque en el form
             invaders1.Create(this); // creo los aliens en el form
             vidatak.VidaTank(this);
         }
-
-
         private int timer = 200;
         private void Space_Invaders_Load(object sender, EventArgs e)
         {
@@ -68,6 +68,7 @@ namespace Space_Invaders2._0
 
                     }
 
+                    // wINNER
                     foreach (Control y in this.Controls) // asigno propiedades
                     {
                         // BALA TANQUE
@@ -85,34 +86,19 @@ namespace Space_Invaders2._0
                                 this.Controls.Remove(x); //remover el invader cuando la bala lo toca
                                 this.Controls.Remove(y); // Remuevo bala
 
-                                if(main.Score <= 33)
-                                {
-                                    Score(1); // suamr al score
-
-                                }
-
-                                if (main.Score >= 33)
-                                {
-                                    Winner winner = new Winner(main.Score);
-
-                                    Timer_Main.Stop();
-                                    winner.ShowDialog();
-                                    this.Visible = false;
-
-                                    Score(2);
-                                }
+                                Score();
                             }
 
                         }
 
                     }
-                   
+
                 }
 
                 //BALA INVADERS
                 if (x is PictureBox && (string)x.Tag == "BulletAliens") // bala Aliens
                 {
-                    x.Top += 8; // muevo bala invaders
+                    x.Top += 5; // muevo bala invaders
                     if (x.Top > 640) // delete bala cuando pasa las dimensiones de la ventana
                     {
                         this.Controls.Remove(x);
@@ -139,17 +125,42 @@ namespace Space_Invaders2._0
                     }
                 }
             }
-            
+
 
         }
 
-        private void Score(int contador) // Suma puntaje
+        public void Score()
         {
-            main.Score += contador;
-            label2.Text = Convert.ToString(main.Score); // mostrar en el label 
+            if (main.Score <= 33)
+            {
+                main.Score += 1; // suamr al score
 
+                label2.Text = main.Score.ToString();
+                Winner winner = new Winner(main.Score);
+
+                if (main.Score == 33)
+                {
+                    Timer_Main.Stop();
+                    winner.ShowDialog();
+                    this.Visible = false;
+                }
+            }
+
+            if (main.Score >= 33 && main.Score <= 66)
+            {
+                main.Score += 1; // sumar al score
+                label2.Text = main.Score.ToString();
+                Winner winner = new Winner(main.Score);
+                if (main.Score == 66)
+                {
+                    Timer_Main.Stop();
+                    winner.ShowDialog();
+                    this.Visible = false;
+                }
+
+            }
+          
         }
-
         private void MovimientoTank(object sender, KeyEventArgs e) // Teclas tanque
         {
             int x = loadtank.tank.Location.X; // Guardo la localización
@@ -173,22 +184,19 @@ namespace Space_Invaders2._0
             if (e.KeyCode == Keys.D) loadtank.tank.Left += loadtank.Speed; // muevo a la dereccha
 
 
-        }
 
-        private void Disparo(object sender, MouseEventArgs e) // generador y disparodr de la bala del tanque
+        }
+        private void Disparo(object sender, MouseEventArgs e) // Generar bala
         {
 
             //timer -= 110; // resta al timer
-            //if (timer < 1) // condición
+            //if (timer <= 1) // condición
             //{
             //    timer = 200; //  tiempo en que se ejcutara (milisegundos)
 
-               loadtank.Bullet(this, "BulletTank");
+                loadtank.Bullet(this, "BulletTank");
 
             //}
-
-
-
 
         }
         private void Space_Invaders_FormClosing(object sender, FormClosingEventArgs e) // Finalizar ejecución
@@ -200,7 +208,5 @@ namespace Space_Invaders2._0
         {
 
         }
-
-
     }
 }

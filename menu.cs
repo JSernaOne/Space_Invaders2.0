@@ -21,6 +21,7 @@ namespace Space_Invaders2._0
             int score = puntaje;
 
             label4.Text = score.ToString();
+
             if (score == 33)
             {
                 NivelUno.Enabled = false;
@@ -29,7 +30,8 @@ namespace Space_Invaders2._0
             if (score == 66)
             {
                 NivelUno.Enabled = false;
-                NivelTres.Enabled = true; }
+                NivelTres.Enabled = true;
+            }
         }
 
         public void Media()
@@ -60,7 +62,8 @@ namespace Space_Invaders2._0
 
         private void NivelUno_Click(object sender, EventArgs e) // nIVEL 1
         {
-            Space_Invaders spaceInvaders = new Space_Invaders(); // Instancio el form2
+
+            Space_Invaders spaceInvaders = new Space_Invaders(3); // Instancio el form2
 
             spaceInvaders.Visible = true; // abro el form2
             this.Visible = false; // Oculto el form1
@@ -69,7 +72,7 @@ namespace Space_Invaders2._0
 
         private void NivelDos_Click(object sender, EventArgs e) //Nivel 2
         {
-            Space_Invaders spaceInvaders = new Space_Invaders(); // Instancio el form2
+            Space_Invaders spaceInvaders = new Space_Invaders(5); // Instancio el form2
 
             spaceInvaders.Visible = true;
             this.Visible = false;
@@ -78,7 +81,7 @@ namespace Space_Invaders2._0
 
         private void NivelTres_Click(object sender, EventArgs e) // Nivel 3
         {
-            Space_Invaders spaceInvaders = new Space_Invaders(); // Instancio el form2
+            Space_Invaders spaceInvaders = new Space_Invaders(8); // Instancio el form2
 
             spaceInvaders.Visible = true;
             this.Visible = false;

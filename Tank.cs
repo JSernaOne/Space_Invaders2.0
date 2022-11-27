@@ -32,7 +32,7 @@ namespace Space_Invaders2._0
 
                 if (x is PictureBox && (string)x.Tag == "BulletTank") // Bala del tanque
                 {
-                    x.Top -= 6; // Movimiento
+                    x.Top -= 12; // Movimiento
 
                 }
             }

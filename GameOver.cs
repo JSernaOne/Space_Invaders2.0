@@ -32,6 +32,8 @@ namespace Space_Invaders2._0
 
         private void Volver_Click_1(object sender, EventArgs e)
         {
+            Main main = new Main();
+            main.Score = 0;
             menu menu = new menu();//INSTANCIAEL FORM DE EL MENU
             menu.Visible = true;
             this.Visible = false;
@@ -39,12 +41,14 @@ namespace Space_Invaders2._0
 
         private void Volver_intentarlo_Click_1(object sender, EventArgs e)
         {
-            Space_Invaders space_Invaders = new Space_Invaders();
+            Main main = new Main();
+            main.Score = 0;
+            Space_Invaders space_Invaders = new Space_Invaders(3);
             space_Invaders.Visible = true;
             this.Visible=false;
  
         }
-
+        
         private void PictureBox1_Click_1(object sender, EventArgs e)
         {
 

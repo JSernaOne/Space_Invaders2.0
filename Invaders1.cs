@@ -8,6 +8,9 @@ namespace Space_Invaders2._0
 {
     internal class Invaders1 : Main // manipulación de los enemigos
     {
+        public Invaders1(int speedInvaders) : base(speedInvaders) // inicia los valores para los niveles 
+        {
+        }
         public void Create(Control x) // Creación de Aliens
         {
             for (int i = 0; i <= invaders.GetUpperBound(0); i++) // GetUpper devuleve el último indice
