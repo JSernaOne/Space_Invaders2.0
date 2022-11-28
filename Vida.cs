@@ -10,15 +10,27 @@ namespace Space_Invaders2._0
     {
         public void VidaTank(Form p)
         {
-            vida.Size = new Size(200, 15);
-            vida.Location = new Point(800, 21);
-            vida.Minimum = 0;
-            vida.Maximum = 90;
-            vida.Value = vida.Maximum;
+            vidatank.Size = new Size(200, 15);
+            vidatank.Location = new Point(800, 21);
+            vidatank.Minimum = 0;
+            vidatank.Maximum = 90;
+            vidatank.Value = vidatank.Maximum;
 
-            p.Controls.Add(vida);
+            p.Controls.Add(vidatank);
 
             
+        }
+
+        public void VidaBoss(Form p)
+        {
+            vidaBoss.Size = new Size(200, 15);
+            vidaBoss.Location = new Point(500, 21);
+            vidaBoss.Minimum = 0;
+            vidaBoss.Maximum = 120;
+            vidaBoss.Value = vidaBoss.Maximum;
+
+            p.Controls.Add(vidaBoss);
+
         }
     }
 }

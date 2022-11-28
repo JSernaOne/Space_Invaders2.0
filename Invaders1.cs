@@ -27,7 +27,7 @@ namespace Space_Invaders2._0
                     invaders[i].Image = Properties.Resources.inavders; // obtengo la imagen
                     invaders[i].Left = Left; // pocisión inicial
                     invaders[i].Top = 50; // margen superior
-                    invaders[i].Tag = "invaders";   
+                    invaders[i].Tag = "invaders";
 
                     x.Controls.Add(base.invaders[i]); // agregando invaders a la lista
                     Left += 80; // avanzo de pocisión de los invaders
@@ -61,16 +61,36 @@ namespace Space_Invaders2._0
 
         }
 
+        public void Boss(Form f) // Creación del jefe final
+        {
+            boss.Size = new Size(120, 80);// diemenciones del picture
+            boss.SizeMode = PictureBoxSizeMode.StretchImage; // ajusto la imagen 
+            boss.Image = Properties.Resources.Boss; // obtengo la imagen
+            boss.Location = new Point(500, 50);
+            boss.Tag = "Boss";
+
+            f.Controls.Add(base.boss); // agrego el picture a la instancia PictureBox del main
+                                       // (base accedo a la clase padre)
+
+
+            for (int i = 0; i <= invaders.GetUpperBound(0); i++) // GetUpper devuleve el último indice
+                                                                 // de la primera dimención del array y
+                                                                 // GetLower el primer indice del array
+            {
+                f.Controls.Remove(base.invaders[i]);
+            }
+        }
         public void Movement(Form f) // Movimietno invaders
         {
+            int width = f.Width; // tamaño(ancho) del form
+
+            // Invaders
             for (int i = 0; i <= invaders.GetUpperBound(0); i++) // Recorrer la matriz
             {
                 int x = invaders[i].Location.X; // lolización del alien en el eje x
                 int y = invaders[i].Location.Y; // lolización del alien en el eje y
 
-                int width = f.Width; // tamaño(ancho) del form
-
-                invaders[i].Left += SpeedInvaders; // Movimiento de los invaders
+                invaders[i].Left += SpeedInvaders; // Movimiento de los invadersaaa
 
                 if (x > width) //  verificar la condición si el cuadro de imagen toca
                                //  el límite del ancho del formulario   
@@ -78,6 +98,20 @@ namespace Space_Invaders2._0
                     invaders[i].Location = new Point(x - 1100, y + 65); // redibujo los invaders
                 }
             }
+
+            // Boss
+            int w = boss.Location.X; // lolización del alien en el eje x
+            int t = boss.Location.Y; // lolización del alien en el eje y
+
+            boss.Left += 3; // Movimiento de los invadersaaa
+
+            if (w > width) //  verificar la condición si el cuadro de imagen toca
+                           //  el límite del ancho del formulario   
+            {
+                boss.Location = new Point(w - 1100, t + 85); // redibujo los invaders
+            }
+
+
         }
 
     }

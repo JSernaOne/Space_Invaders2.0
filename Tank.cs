@@ -17,7 +17,7 @@ namespace Space_Invaders2._0
             tank.SizeMode = PictureBoxSizeMode.StretchImage; // ajusto la imagen 
             tank.Image = Properties.Resources.tank; // obtengo la imagen
             tank.Location = new Point(470, 520);
-            tank.Name = "Player";
+            tank.Name = "Invaders";
 
             f.Controls.Add(base.tank); // agrego el picture a la instancia PictureBox del main
                                        // (base accedo a la clase padre)

@@ -26,7 +26,7 @@ namespace Space_Invaders2._0
             this.Visible = false;
         }
 
-        private void Volver_Click(object sender, EventArgs e)
+        private void Volver_Click(object sender, EventArgs e) //bOTTON
         {
             menu menu = new menu();
             menu.Visible = true;

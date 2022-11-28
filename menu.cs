@@ -73,7 +73,7 @@ namespace Space_Invaders2._0
         private void NivelDos_Click(object sender, EventArgs e) //Nivel 2
         {
             Space_Invaders spaceInvaders = new Space_Invaders(5); // Instancio el form2
-
+  
             spaceInvaders.Visible = true;
             this.Visible = false;
 
@@ -81,7 +81,7 @@ namespace Space_Invaders2._0
 
         private void NivelTres_Click(object sender, EventArgs e) // Nivel 3
         {
-            Space_Invaders spaceInvaders = new Space_Invaders(8); // Instancio el form2
+            Space_Invaders spaceInvaders = new Space_Invaders(3); // Instancio el form2
 
             spaceInvaders.Visible = true;
             this.Visible = false;

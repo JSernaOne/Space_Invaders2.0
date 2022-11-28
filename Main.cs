@@ -11,11 +11,13 @@ namespace Space_Invaders2._0
     internal class Main
     {
         // Instancias
-        public PictureBox tank; // almacenar bala 
+        public PictureBox tank; // almacenar tank
         public PictureBox[] invaders = new PictureBox[33]; // almacenar aliens
+        public PictureBox boss;
         public PictureBox bullet; // almacena las balas
         public Random random;
-        public ProgressBar vida;
+        public ProgressBar vidatank;
+        public ProgressBar vidaBoss;
 
         // Propiedades
         private int left = 0; // pocisión en x inicial 
@@ -27,24 +29,27 @@ namespace Space_Invaders2._0
         {
             tank = new PictureBox();
             bullet = new PictureBox();
+            boss = new PictureBox();
             random = new Random();
-            vida = new ProgressBar();
-
+            vidatank = new ProgressBar();
+            vidaBoss= new ProgressBar();
             left = 50; // pocisión en x inicial 
             top = 50; // pocision en y inicial
-            speed = 10; // velocidad de movimient
+            speed = 14; // velocidad de movimient
         }
 
         public Main(int speedInvader) // Constructor de niveles
         {
             tank = new PictureBox();
             bullet = new PictureBox();
+            boss = new PictureBox();
             random = new Random();
-            vida = new ProgressBar();
+            vidatank = new ProgressBar();
+            vidaBoss = new ProgressBar();
 
             left = 50; // pocisión en x inicial 
             top = 50; // pocision en y inicial
-            speed = 10; // velocidad de movimient
+            speed = 15; // velocidad de movimient
             
             this.speedInvader = speedInvader; // velocidad del invader de avuerdo al  nivel
         }

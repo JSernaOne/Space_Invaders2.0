@@ -73,9 +73,8 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(110, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 38);
+            this.label2.Size = new System.Drawing.Size(0, 38);
             this.label2.TabIndex = 2;
-            this.label2.Text = "0";
             this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // label3
@@ -86,9 +85,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(734, 5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 38);
+            this.label3.Size = new System.Drawing.Size(73, 38);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Health:";
+            this.label3.Text = "Tank";
             // 
             // Space_Invaders
             // 
