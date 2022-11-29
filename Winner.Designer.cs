@@ -58,14 +58,14 @@
             // 
             // Volver
             // 
-            this.Volver.BackColor = System.Drawing.Color.Black;
+            this.Volver.BackColor = System.Drawing.Color.Transparent;
             this.Volver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Volver.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Volver.ForeColor = System.Drawing.Color.White;
-            this.Volver.Location = new System.Drawing.Point(163, 161);
+            this.Volver.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Volver.ForeColor = System.Drawing.Color.Cyan;
+            this.Volver.Location = new System.Drawing.Point(178, 143);
             this.Volver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Volver.Name = "Volver";
-            this.Volver.Size = new System.Drawing.Size(142, 26);
+            this.Volver.Size = new System.Drawing.Size(108, 54);
             this.Volver.TabIndex = 3;
             this.Volver.Text = "Volver al Menu";
             this.Volver.UseVisualStyleBackColor = false;

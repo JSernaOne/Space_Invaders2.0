@@ -48,10 +48,10 @@
             // 
             // Volver_intentarlo
             // 
-            this.Volver_intentarlo.BackColor = System.Drawing.Color.Black;
+            this.Volver_intentarlo.BackColor = System.Drawing.Color.Transparent;
             this.Volver_intentarlo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Volver_intentarlo.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Volver_intentarlo.ForeColor = System.Drawing.Color.White;
+            this.Volver_intentarlo.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Volver_intentarlo.ForeColor = System.Drawing.Color.Cyan;
             this.Volver_intentarlo.Location = new System.Drawing.Point(52, 127);
             this.Volver_intentarlo.Name = "Volver_intentarlo";
             this.Volver_intentarlo.Size = new System.Drawing.Size(126, 58);
@@ -62,10 +62,10 @@
             // 
             // Volver
             // 
-            this.Volver.BackColor = System.Drawing.Color.Black;
+            this.Volver.BackColor = System.Drawing.Color.Transparent;
             this.Volver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Volver.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Volver.ForeColor = System.Drawing.Color.White;
+            this.Volver.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Volver.ForeColor = System.Drawing.Color.Cyan;
             this.Volver.Location = new System.Drawing.Point(211, 127);
             this.Volver.Name = "Volver";
             this.Volver.Size = new System.Drawing.Size(127, 58);

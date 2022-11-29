@@ -219,7 +219,7 @@ namespace Space_Invaders2._0
         {
             int x = loadtank.tank.Location.X; // Guardo la localización
 
-            if (x >= 920) x = 920; // limite x por derecha
+            if (x >= 920) x = 920; // limite x por derechaaa
             if (x <= 5) x = 5; // limite x por la izquieda
             Point point = new Point(x, 520); // Localizo el punto
             loadtank.tank.Location = point; // redibujo el picturebox
