@@ -87,6 +87,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Space Invaders";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Regresar);
             this.Load += new System.EventHandler(this.Form2_Load_1);

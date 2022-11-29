@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.Boss = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,6 +90,19 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Tank";
             // 
+            // Boss
+            // 
+            this.Boss.AutoSize = true;
+            this.Boss.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Boss.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Boss.ForeColor = System.Drawing.Color.White;
+            this.Boss.Location = new System.Drawing.Point(450, 5);
+            this.Boss.Name = "Boss";
+            this.Boss.Size = new System.Drawing.Size(84, 38);
+            this.Boss.TabIndex = 4;
+            this.Boss.Text = "BOSS";
+            this.Boss.Visible = false;
+            // 
             // Space_Invaders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -97,6 +111,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlText;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(982, 593);
+            this.Controls.Add(this.Boss);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -104,11 +119,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Space_Invaders";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Space_Invaders";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Space_Invaders_FormClosing);
             this.Load += new System.EventHandler(this.Space_Invaders_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MovimientoTank);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Disparo);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Disparo);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -122,5 +138,6 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private Label Boss;
     }
 }

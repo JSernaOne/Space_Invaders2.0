@@ -15,9 +15,7 @@ namespace Space_Invaders2._0
             vidatank.Minimum = 0;
             vidatank.Maximum = 90;
             vidatank.Value = vidatank.Maximum;
-
             p.Controls.Add(vidatank);
-
             
         }
 

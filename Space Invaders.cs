@@ -26,23 +26,20 @@ namespace Space_Invaders2._0
 
             invaders1 = new Invaders1(speedInvaders); // mando dato a los invaders
             label2.Text = main.Score.ToString();
-
             loadtank.CreateTank(this); // creo el tanque en el form
             vida.VidaTank(this);
             invaders1.Create(this); // creo los aliens en el form
 
             if (main.Score >= 66)
             {
-                vida.VidaTank(this);
+                Boss.Visible = true;
                 vida.VidaBoss(this);
-                invaders1.Boss(this); // creo el invader
-
+                invaders1.Boss(this); // creo el invaders
             }
 
 
         }
         private int timer = 200;
-
 
         private void Timer_Main_Tick(object sender, EventArgs e)
         {
@@ -184,7 +181,7 @@ namespace Space_Invaders2._0
 
         }
 
-        public void Score()
+        public void Score() // Score
         {
             Winner winner = new Winner(main.Score);
 
@@ -240,8 +237,8 @@ namespace Space_Invaders2._0
         private void Disparo(object sender, MouseEventArgs e) // Generar bala
         {
 
-            timer -= 110; // resta al timer
-            if (timer <= 1) // condición
+            timer -= 130; // resta al timer
+            if (timer < 1) // condición
             {
                 timer = 200; //  tiempo en que se ejcutara (milisegundos)
 

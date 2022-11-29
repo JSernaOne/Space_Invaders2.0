@@ -11,6 +11,8 @@ namespace Space_Invaders2._0
         public Invaders1(int speedInvaders) : base(speedInvaders) // inicia los valores para los niveles 
         {
         }
+
+        private bool MovBoss = true;
         public void Create(Control x) // Creación de Aliens
         {
             for (int i = 0; i <= invaders.GetUpperBound(0); i++) // GetUpper devuleve el último indice
@@ -103,12 +105,26 @@ namespace Space_Invaders2._0
             int w = boss.Location.X; // lolización del alien en el eje x
             int t = boss.Location.Y; // lolización del alien en el eje y
 
-            boss.Left += 3; // Movimiento de los invadersaaa
-
-            if (w > width) //  verificar la condición si el cuadro de imagen toca
-                           //  el límite del ancho del formulario   
+            if (MovBoss == true)
             {
-                boss.Location = new Point(w - 1100, t + 85); // redibujo los invaders
+                boss.Left += 5;
+
+                if (boss.Left > 920) // x ded
+                {
+                    MovBoss = false;
+
+                    Point point = new Point( boss.Left, boss.Top + 80); // Localizo el punto
+                    boss.Location = point; // redibujo el picturebox
+                }
+            }
+            if (MovBoss == false)
+            {
+                boss.Left -= 5;
+
+                if (boss.Left < -10)
+                {
+                    MovBoss = true;
+                }
             }
 
 

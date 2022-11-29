@@ -36,8 +36,8 @@ namespace Space_Invaders2._0
 
         public void Media()
         {
-            //SoundPlayer sp = new SoundPlayer(Properties.Resources.space_invaders);
-            //sp.PlayLooping();
+            SoundPlayer sp = new SoundPlayer(Properties.Resources.space_invaders);
+            sp.PlayLooping();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -81,7 +81,7 @@ namespace Space_Invaders2._0
 
         private void NivelTres_Click(object sender, EventArgs e) // Nivel 3
         {
-            Space_Invaders spaceInvaders = new Space_Invaders(3); // Instancio el form2
+            Space_Invaders spaceInvaders = new Space_Invaders(5); // Instancia del form 2
 
             spaceInvaders.Visible = true;
             this.Visible = false;
