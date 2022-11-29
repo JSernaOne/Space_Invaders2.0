@@ -42,9 +42,10 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Gray;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 584);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 438);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(992, 11);
+            this.pictureBox1.Size = new System.Drawing.Size(868, 8);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -60,9 +61,9 @@
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(11, 5);
+            this.label1.Location = new System.Drawing.Point(10, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 38);
+            this.label1.Size = new System.Drawing.Size(73, 30);
             this.label1.TabIndex = 1;
             this.label1.Text = "Score:\r\n";
             // 
@@ -72,9 +73,9 @@
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(110, 5);
+            this.label2.Location = new System.Drawing.Point(96, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 38);
+            this.label2.Size = new System.Drawing.Size(0, 30);
             this.label2.TabIndex = 2;
             this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
@@ -84,9 +85,9 @@
             this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(734, 5);
+            this.label3.Location = new System.Drawing.Point(642, 4);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 38);
+            this.label3.Size = new System.Drawing.Size(57, 30);
             this.label3.TabIndex = 3;
             this.label3.Text = "Tank";
             // 
@@ -96,27 +97,27 @@
             this.Boss.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Boss.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Boss.ForeColor = System.Drawing.Color.White;
-            this.Boss.Location = new System.Drawing.Point(450, 5);
+            this.Boss.Location = new System.Drawing.Point(394, 4);
             this.Boss.Name = "Boss";
-            this.Boss.Size = new System.Drawing.Size(84, 38);
+            this.Boss.Size = new System.Drawing.Size(67, 30);
             this.Boss.TabIndex = 4;
             this.Boss.Text = "BOSS";
             this.Boss.Visible = false;
             // 
             // Space_Invaders
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlText;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(982, 593);
+            this.ClientSize = new System.Drawing.Size(859, 445);
             this.Controls.Add(this.Boss);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Space_Invaders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
