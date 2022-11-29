@@ -108,21 +108,23 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlText;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(859, 445);
+            this.ClientSize = new System.Drawing.Size(859, 451);
             this.Controls.Add(this.Boss);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(875, 490);
+            this.MinimumSize = new System.Drawing.Size(875, 490);
             this.Name = "Space_Invaders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Space_Invaders";
+            this.Text = "Space Invader";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Space_Invaders_FormClosing);
             this.Load += new System.EventHandler(this.Space_Invaders_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MovimientoTank);

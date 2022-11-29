@@ -111,8 +111,9 @@ namespace Space_Invaders2._0
                         Form2 form2 = new Form2();//INSTANCIO EL FORM DEL GAME OVER(cuando los aliens llegan al suelo)
 
                         Timer_Main.Stop();
-                        form2.ShowDialog();//MOSTRAR EL FORM DE GAME OVER
                         this.Visible = false;
+
+                        form2.ShowDialog();//MOSTRAR EL FORM DE GAME OVER
 
                     }
                     // wINNER
@@ -168,9 +169,10 @@ namespace Space_Invaders2._0
 
                             this.Controls.Remove(loadtank.tank);
                             Timer_Main.Stop();
+                            this.Visible = false;
+
                             form2.ShowDialog();//MOSTRAR EL FORM DE GAME OVER
 
-                            this.Visible = false;
 
                         }
 
@@ -189,24 +191,26 @@ namespace Space_Invaders2._0
             if (main.Score == 33)
             {
                 Timer_Main.Stop();
-                winner.ShowDialog();
                 this.Visible = false;
+
+                winner.ShowDialog();
 
             }
 
             if (main.Score == 66)
             {
                 Timer_Main.Stop();
-                winner.ShowDialog();
                 this.Visible = false;
+
+                winner.ShowDialog();
             }
 
             if (main.Score == 306)
             {
                 Timer_Main.Stop();
+                this.Visible = false;
                 winner.ShowDialog();
                 main.Score = 0;
-                this.Visible = false;
             }
 
 
