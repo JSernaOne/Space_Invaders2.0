@@ -20,9 +20,7 @@ namespace Space_Invaders2._0
 
         private void Form2_Load_1(object sender, EventArgs e)
         {
-            PictureBox1.Location=new Point(253, 90);
-            Volver_intentarlo.Location = new Point(120, 200);
-            Volver.Location = new Point(300, 200);
+            
         }
         
         private void PictureBox1_Click(object sender, EventArgs e)
