@@ -24,7 +24,7 @@ namespace Space_Invaders2._0
             vidaBoss.Size = new Size(200, 15);
             vidaBoss.Location = new Point(500, 21);
             vidaBoss.Minimum = 0;
-            vidaBoss.Maximum = 120;
+            vidaBoss.Maximum = 130;
             vidaBoss.Value = vidaBoss.Maximum;
 
             p.Controls.Add(vidaBoss);

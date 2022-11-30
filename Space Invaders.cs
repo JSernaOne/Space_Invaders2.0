@@ -6,6 +6,7 @@ using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.Formats.Asn1;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -40,24 +41,27 @@ namespace Space_Invaders2._0
 
         }
         private int timer = 200;
+        int timerDisparo = 200;
 
         private void Timer_Main_Tick(object sender, EventArgs e)
         {
             loadtank.MovementBullet(this); // bala
             invaders1.Movement(this); // invaders
 
+            timerDisparo -= 20;
+            
             // Balas de lso Aliens
             timer -= 10; // conteo regresivo del timer
             if (timer < 1) // condición´para ejecutar 
             {
                 timer = 200; // cada que el intervalo definido en el timer del form se ejecute lanzara un bala
-                invaders1.Bullet(this, "BulletAliens"); // LLamo a la bala del alien
+                //invaders1.Bullet(this, "BulletAliens"); // LLamo a la bala del alien
             }
 
             foreach (Control x in this.Controls) // propiedades de los cuadros 
             {
                 // INVASIÓN
-                if (x is PictureBox && (string)x.Tag == "invaders") // asigno la x a un Picture dandole un valor de string
+                if (x is PictureBox && (string)x.Tag == "invaders") // asigno la x a un Picture dandole un valor de stringd
                                                                     // y lo comparo con el tag de los invaders
                 {
 
@@ -130,7 +134,7 @@ namespace Space_Invaders2._0
 
                             if (y.Bounds.IntersectsWith(x.Bounds)) // válido que la bala intercepte al boss
                             {
-                                vida.vidaBoss.Value -= 10; //resto a la vida del tanque
+                                vida.vidaBoss.Value -= 10;
                                 this.Controls.Remove(y); // Remuevo bala
                                 main.Score += 20; // suamr al score
                                 label2.Text = main.Score.ToString();
@@ -204,8 +208,8 @@ namespace Space_Invaders2._0
 
                 winner.ShowDialog();
             }
-
-            if (main.Score == 306)
+            
+            if (main.Score == 326)
             {
                 Timer_Main.Stop();
                 this.Visible = false;
@@ -238,19 +242,16 @@ namespace Space_Invaders2._0
             if (e.KeyCode == Keys.D) loadtank.tank.Left += loadtank.Speed; // muevo a la dereccha
 
         }
-        private void Disparo(object sender, MouseEventArgs e) // Generar bala
+        private async void Disparo(object sender, MouseEventArgs e) // Generar bala
         {
-
-            timer -= 130; // resta al timer
-            if (timer < 1) // condición
+            if (timerDisparo < 1) // condición´para ejecutar 
             {
-                timer = 200; //  tiempo en que se ejcutara (milisegundos)
-
+                timerDisparo = 200; // cada que el intervalo definido en el timer del form se ejecute lanzara un bala
                 loadtank.Bullet(this, "BulletTank");
 
             }
-
         }
+
         private void Space_Invaders_FormClosing(object sender, FormClosingEventArgs e) // Finalizar ejecución
         {
             Application.Exit(); // cerrar desde el boton de ventana

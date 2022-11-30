@@ -41,7 +41,7 @@ namespace Space_Invaders2._0
         {
             Main main = new Main();
             main.Score = 0;
-            Space_Invaders space_Invaders = new Space_Invaders(3);
+            Space_Invaders space_Invaders = new Space_Invaders(5);
             space_Invaders.Visible = true;
             this.Visible=false;
  
