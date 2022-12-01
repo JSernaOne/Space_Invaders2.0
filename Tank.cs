@@ -10,7 +10,6 @@ namespace Space_Invaders2._0
 {
     internal class Tank : Main // player
     {
-        //Invaders1 invaders1 = new Invaders1();
         public void CreateTank(Form f) // Creó tanque
         {
             tank.Size = new Size(80, 60);// diemenciones del picture
@@ -27,19 +26,17 @@ namespace Space_Invaders2._0
         public void MovementBullet(Form f) // Mover Bala
         {
 
-            foreach (Control x in f.Controls) // asigno propiedades a x(el invader llega al suelo toca el tanque)
+            foreach (Control x in f.Controls) // asigno propiedades a x
             {
 
                 if (x is PictureBox && (string)x.Tag == "BulletTank") // Bala del tanque
                 {
-                    x.Top -= 12; // Movimiento
+                    x.Top -= 12; // Movimiento de la bala
 
                 }
             }
 
-
         }
-       
 
     }
 }

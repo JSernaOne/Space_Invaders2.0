@@ -2,13 +2,16 @@ using System.Media;
 
 namespace Space_Invaders2._0
 {
-    public partial class menu : Form // Ventana de inicio
+    public partial class menu : Form // Ventana de inicio, Form 1
     {
         public menu()
         {
             InitializeComponent();
+
+            // Inicilizó métodos
             Media();
-            DesbloqearLevel(0);
+            DesbloqearLevel(0); 
+           
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -16,12 +19,13 @@ namespace Space_Invaders2._0
 
         }
 
-        public void DesbloqearLevel(int puntaje)
+        public void DesbloqearLevel(int puntaje) // Función que permite desboquear los niveles
         {
             int score = puntaje;
 
             label4.Text = score.ToString();
 
+            // Desbloqueó niveles comparando puntaje
             if (score == 33)
             {
                 NivelUno.Enabled = false;
@@ -33,11 +37,12 @@ namespace Space_Invaders2._0
                 NivelTres.Enabled = true;
             }
         }
-
-        public void Media()
+       
+        public void Media() // Música de la app
         {
             //SoundPlayer sp = new SoundPlayer(Properties.Resources.space_invaders);
-            //sp.PlayLooping();
+            //sp.PlayLooping();;
+           
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -55,33 +60,35 @@ namespace Space_Invaders2._0
 
         }
 
-        private void Exit(object sender, FormClosingEventArgs e)
+        private void Exit(object sender, FormClosingEventArgs e) // Botón de ventana, cierra toda la ejecución del programa
         {
             Application.Exit();
         }
 
-        private void NivelUno_Click(object sender, EventArgs e) // nIVEL 1
+        // Niveles 1, 2 y 3
+        private void NivelUno_Click(object sender, EventArgs e) 
         {
 
-            Space_Invaders spaceInvaders = new Space_Invaders(5); // Instancio el form2
+            Space_Invaders spaceInvaders = new Space_Invaders(5); // Se instancia el form y se le pasa los
+                                                                  // valores de inicio al constructor
 
             spaceInvaders.Visible = true; // abro el form2
-            this.Visible = false; // Oculto el form1
+            this.Visible = false; // Oculto este form (menú)
 
         }
 
-        private void NivelDos_Click(object sender, EventArgs e) //Nivel 2
+        private void NivelDos_Click(object sender, EventArgs e)
         {
-            Space_Invaders spaceInvaders = new Space_Invaders(8); // Instancio el form2
+            Space_Invaders spaceInvaders = new Space_Invaders(8); 
   
             spaceInvaders.Visible = true;
             this.Visible = false;
 
         }
 
-        private void NivelTres_Click(object sender, EventArgs e) // Nivel 3
+        private void NivelTres_Click(object sender, EventArgs e)
         {
-            Space_Invaders spaceInvaders = new Space_Invaders(12); // Instancia del form 2
+            Space_Invaders spaceInvaders = new Space_Invaders(12); 
 
             spaceInvaders.Visible = true;
             this.Visible = false;
@@ -101,5 +108,6 @@ namespace Space_Invaders2._0
         {
 
         }
+
     }
 }

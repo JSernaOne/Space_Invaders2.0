@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Space_Invaders2._0
 {
-    public partial class Form2 : Form // Winner
+    public partial class Form2 : Form // Form de juego finalizado
     {
         public Form2()
         {
@@ -28,6 +28,7 @@ namespace Space_Invaders2._0
 
         }
 
+        // Función de los botones
         private void Volver_Click_1(object sender, EventArgs e)
         {
             Main main = new Main();
@@ -41,21 +42,20 @@ namespace Space_Invaders2._0
         {
             Main main = new Main();
             main.Score = 0;
-            Space_Invaders space_Invaders = new Space_Invaders(5);
+            Space_Invaders space_Invaders = new Space_Invaders(5); // Reinicio desde el nivel 1
             space_Invaders.Visible = true;
             this.Visible=false;
  
-        }
-        
-        private void PictureBox1_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void Regresar(object sender, FormClosedEventArgs e) // Evente formClose
         {
             menu menu = new menu();//INSTANCIAEL FORM DE EL MENU
             menu.Visible = true;
+        }
+        private void PictureBox1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

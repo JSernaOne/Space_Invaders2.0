@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace Space_Invaders2._0
 {
-    public partial class Winner : Form
+    public partial class Winner : Form // Form de ganar niveles
     {
-        private int puntaje;
-        public Winner(int score)
+        private int puntaje; // atributo que contiene el dato del puntaje
+        public Winner(int score) // Constructor con parametros que obtiene el dato del Space Invader
         {
             InitializeComponent();
+
             puntaje = score;
         }
 
@@ -26,11 +27,11 @@ namespace Space_Invaders2._0
             this.Visible = false;
         }
 
-        private void Volver_Click(object sender, EventArgs e) //bOTTON
+        private void Volver_Click(object sender, EventArgs e) // Función del botón
         {
             menu menu = new menu();
             menu.Visible = true;
-            menu.DesbloqearLevel(puntaje);
+            menu.DesbloqearLevel(puntaje); // mando valores al menú
 
             this.Visible = false;
         }

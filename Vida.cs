@@ -8,6 +8,7 @@ namespace Space_Invaders2._0
 {
     internal class Vida:Main
     {
+        // Creo vida del tanque
         public void VidaTank(Form p)
         {
             vidatank.Size = new Size(200, 15);
@@ -19,6 +20,7 @@ namespace Space_Invaders2._0
             
         }
 
+        // Creo vida del Boss
         public void VidaBoss(Form p)
         {
             vidaBoss.Size = new Size(200, 15);

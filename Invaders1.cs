@@ -6,22 +6,26 @@ using System.Threading.Tasks;
 
 namespace Space_Invaders2._0
 {
-    internal class Invaders1 : Main // manipulación de los enemigos
+    internal class Invaders1 : Main // Propiedades y métodos de los Enemigos
     {
-        public Invaders1(int speedInvaders) : base(speedInvaders) // inicia los valores para los niveles 
+        // Se crea un constrcutor que va a recibir el valor del parametro y se lo va mandar
+        // al costrcutor de la clase padre que permite recibir ete parametro
+        public Invaders1(int speedInvaders) : base(speedInvaders)
         {
         }
+        //
 
-        private bool MovBoss = true;
+        private bool MovBoss = true; // Movimiento del Boss
         public void Create(Control x) // Creación de Aliens
         {
-            for (int i = 0; i <= invaders.GetUpperBound(0); i++) // GetUpper devuleve el último indice
-                                                                 // de la primera dimención del array y
-                                                                 // GetLower el primer indice del array
+            // GetUpper devuleve el último indice
+            // de la primera dimención del array y
+            // GetLower el primer indice del array
+            for (int i = 0; i <= invaders.GetUpperBound(0); i++) 
             {
                 invaders[i] = new PictureBox(); // Creo el picture
-                invaders[i].Size = new Size(80, 60);// diemenciones del picture
-                invaders[i].SizeMode = PictureBoxSizeMode.StretchImage; // ajusto la imagen 
+                invaders[i].Size = new Size(80, 60);
+                invaders[i].SizeMode = PictureBoxSizeMode.StretchImage; // ajusto el tamaño de la imagen
 
                 // Primera Fila
                 if (i <= 11) // si recorro la pocision de 0 a 11
@@ -29,7 +33,7 @@ namespace Space_Invaders2._0
                     invaders[i].Image = Properties.Resources.inavders; // obtengo la imagen
                     invaders[i].Left = Left; // pocisión inicial
                     invaders[i].Top = 50; // margen superior
-                    invaders[i].Tag = "invaders";
+                    invaders[i].Tag = "invaders"; // Contiene las propiedades del PictureBox
 
                     x.Controls.Add(base.invaders[i]); // agregando invaders a la lista
                     Left += 80; // avanzo de pocisión de los invaders
@@ -38,26 +42,27 @@ namespace Space_Invaders2._0
                 // Segunda fila
                 if (i >= 11 && i <= 22) //recorro la pocision de 11 a 22
                 {
-                    invaders[i].Image = Properties.Resources.inavaders2; // obtengo la imagen
-                    invaders[i].Left = Left - 960; // pocisión inicial
+                    invaders[i].Image = Properties.Resources.inavaders2; 
+                    invaders[i].Left = Left - 960; // Por cada invader creado en la fila 1 se le suma
+                                                   // a la pocisión inicial, se resta lo sumado para que vuelva a la pocisión inicla
                     invaders[i].Top = Top + 50; // margen superior
-                    invaders[i].Tag = "invaders";   // se puede utilizar para llamar a la lista como string
+                    invaders[i].Tag = "invaders"; 
 
-                    x.Controls.Add(base.invaders[i]); // agregando invaders a la lista
-                    Left += 80; // avanzo de pocisión de los invaders
+                    x.Controls.Add(base.invaders[i]); 
+                    Left += 80;
                 }
                 // Tercera Fila
                 if (i >= 22) // de 22 hasta el maximo 
                 {
-                    invaders[i].Size = new Size(80, 55);// diemenciones del picture
+                    invaders[i].Size = new Size(80, 55); // Modifico las dimenciones
 
-                    invaders[i].Image = Properties.Resources.invaders3; // obtengo la imagen
-                    invaders[i].Left = Left - 1920; // pocisión inicial
-                    invaders[i].Top = Top + 120; // margen superior
-                    invaders[i].Tag = "invaders";   // se puede utilizar para llamar a la lista como string
+                    invaders[i].Image = Properties.Resources.invaders3; 
+                    invaders[i].Left = Left - 1920; 
+                    invaders[i].Top = Top + 120; 
+                    invaders[i].Tag = "invaders"; 
 
-                    x.Controls.Add(base.invaders[i]); // agregando invaders a la lista
-                    Left += 80; // avanzo de pocisión de los invaders
+                    x.Controls.Add(base.invaders[i]); 
+                    Left += 80; 
                 }
             }
 
@@ -65,9 +70,9 @@ namespace Space_Invaders2._0
 
         public void Boss(Form f) // Creación del jefe final
         {
-            boss.Size = new Size(120, 80);// diemenciones del picture
-            boss.SizeMode = PictureBoxSizeMode.StretchImage; // ajusto la imagen 
-            boss.Image = Properties.Resources.Boss; // obtengo la imagen
+            boss.Size = new Size(120, 80);
+            boss.SizeMode = PictureBoxSizeMode.StretchImage; 
+            boss.Image = Properties.Resources.Boss; 
             boss.Location = new Point(500, 50);
             boss.Tag = "Boss";
 
@@ -75,13 +80,12 @@ namespace Space_Invaders2._0
                                        // (base accedo a la clase padre)
 
 
-            for (int i = 0; i <= invaders.GetUpperBound(0); i++) // GetUpper devuleve el último indice
-                                                                 // de la primera dimención del array y
-                                                                 // GetLower el primer indice del array
+            for (int i = 0; i <= invaders.GetUpperBound(0); i++) 
             {
                 f.Controls.Remove(base.invaders[i]);
             }
         }
+
         public void Movement(Form f) // Movimietno invaders
         {
             int width = f.Width; // tamaño(ancho) del form
@@ -107,9 +111,9 @@ namespace Space_Invaders2._0
 
             if (MovBoss == true)
             {
-                boss.Left += 5;
+                boss.Left += 5; // movimietno del invader a la derecha
 
-                if (boss.Left > 920) // x ded
+                if (boss.Left > 920) // dectecto cuando el Boss pasa las dimencions del form
                 {
                     MovBoss = false;
 
