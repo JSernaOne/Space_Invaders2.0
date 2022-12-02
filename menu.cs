@@ -42,7 +42,6 @@ namespace Space_Invaders2._0
         {
             //SoundPlayer sp = new SoundPlayer(Properties.Resources.space_invaders);
             //sp.PlayLooping();;
-           
         }
 
         private void label1_Click(object sender, EventArgs e)

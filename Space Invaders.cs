@@ -40,9 +40,7 @@ namespace Space_Invaders2._0
                 vida.VidaBoss(this);
                 invaders1.Boss(this);
             }
-
-
-        }
+        } 
 
         private int timer = 200; // invaders
         int timerDisparo = 200; // jugador
@@ -193,7 +191,7 @@ namespace Space_Invaders2._0
         {
             Winner winner = new Winner(main.Score); // le paso el valor del score al winner
 
-            // Condiciones para cada nivel a razón del del puntaje
+            // Condiciones para cada nivel a razón del puntaje
 
             if (main.Score == 33)
             {
@@ -249,9 +247,12 @@ namespace Space_Invaders2._0
         {
             if (timerDisparo < 1) // condición´para ejecutar 
             {
-                timerDisparo = 200; // reinicio del timer
-                loadtank.Bullet(this, "BulletTank");
+                if(e.Button == MouseButtons.Left) 
+                {
+                    timerDisparo = 200; // reinicio del timer
+                    loadtank.Bullet(this, "BulletTank");
 
+                }
             }
         }
 
