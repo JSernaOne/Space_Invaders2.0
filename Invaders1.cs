@@ -9,7 +9,7 @@ namespace Space_Invaders2._0
     internal class Invaders1 : Main // Propiedades y métodos de los Enemigos
     {
         // Se crea un constrcutor que va a recibir el valor del parametro y se lo va mandar
-        // al costrcutor de la clase padre que permite recibir ete parametro
+        // al costrcutor de la clase padre que permite recibir este parametro
         public Invaders1(int speedInvaders) : base(speedInvaders)
         {
         }
